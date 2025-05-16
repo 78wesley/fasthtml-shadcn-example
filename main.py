@@ -36,7 +36,7 @@ def edit_dialog(todo_id: str):
 
 
 @patch
-def __ft__(self: Todo):
+def __ft__(self: Todo): # type: ignore
     priority_cls = {
         "low": "",
         "medium": "bg-yellow-500/80",
@@ -223,7 +223,7 @@ def get(id: int):
 
 
 @rt("/")
-def put(todo: Todo):
+def put(todo: Todo): # type: ignore
     return todos.upsert(todo)
 
 

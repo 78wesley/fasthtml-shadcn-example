@@ -11,7 +11,7 @@ app, rt, todos, Todo = fast_app(
     priority=str,
     pk="id",
     pico=False,
-    hdrs=(ShadHead(tw_cdn=True, theme_handle=True),),
+    hdrs=(ShadHead(tw_cdn=False, theme_handle=True),),
 )
 
 
@@ -36,7 +36,7 @@ def edit_dialog(todo_id: str):
 
 
 @patch
-def __ft__(self: Todo): # type: ignore
+def __ft__(self: Todo):  # type: ignore
     priority_cls = {
         "low": "",
         "medium": "bg-yellow-500/80",
@@ -223,7 +223,7 @@ def get(id: int):
 
 
 @rt("/")
-def put(todo: Todo): # type: ignore
+def put(todo: Todo):  # type: ignore
     return todos.upsert(todo)
 
 
